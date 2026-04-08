@@ -81,7 +81,8 @@
     #intro,
     #about,
     #origami,
-    #quotes {
+    #quotes,
+    #connections {
       scroll-margin-top: 72px;
     }
 
@@ -133,6 +134,7 @@
       font-weight: 700;
       margin-bottom: 18px;
       background: linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.68) 100%);
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -155,7 +157,8 @@
     }
 
     .about-reflection,
-    .quotes-section {
+    .quotes-section,
+    .connections-section {
       width: min(920px, calc(100% - 40px));
       margin: 0 auto;
       text-align: center;
@@ -176,7 +179,8 @@
     }
 
     .about-reflection::before,
-    .quotes-section::before {
+    .quotes-section::before,
+    .connections-section::before {
       content: "";
       position: absolute;
       inset: -1px;
@@ -186,7 +190,8 @@
     }
 
     .about-reflection:hover,
-    .quotes-section:hover {
+    .quotes-section:hover,
+    .connections-section:hover {
       transform: translateY(-4px);
       border-color: rgba(255,255,255,0.18);
       box-shadow:
@@ -205,6 +210,11 @@
       margin-bottom: 88px;
     }
 
+    .connections-section {
+      margin-top: 0;
+      margin-bottom: 88px;
+    }
+
     .section-kicker {
       font-size: 11px;
       letter-spacing: .18em;
@@ -214,7 +224,8 @@
     }
 
     .about-reflection h2,
-    .quotes-section h2 {
+    .quotes-section h2,
+    .connections-section h2 {
       font-size: clamp(28px, 4.3vw, 40px);
       line-height: 1.04;
       letter-spacing: -0.04em;
@@ -233,6 +244,64 @@
       max-width: 640px;
       margin: 0 auto 4px;
       font-size: 16px;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .connections-section .connections-lede {
+      max-width: 660px;
+      margin: 0 auto 4px;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .connections-grid {
+      margin: 24px auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      text-align: left;
+    }
+
+    .connection-card {
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 18px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.015)),
+        rgba(8,8,8,0.60);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.12),
+        0 14px 28px rgba(0,0,0,0.34);
+      padding: 20px 20px 18px;
+      transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+    }
+
+    .connection-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255,255,255,0.16);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.14),
+        0 18px 34px rgba(0,0,0,0.40);
+    }
+
+    .connection-type {
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.46);
+      margin-bottom: 10px;
+    }
+
+    .connection-card h3 {
+      font-size: 22px;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .connection-card p {
+      font-size: 15px;
       line-height: 1.75;
       color: var(--muted);
     }
@@ -732,12 +801,17 @@
         font-size: 12px;
       }
       .about-reflection,
-      .quotes-section {
+      .quotes-section,
+      .connections-section {
         width: min(920px, calc(100% - 24px));
         padding: 34px 20px;
         border-radius: 24px;
       }
       .quotes-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .connections-grid {
         grid-template-columns: 1fr;
         gap: 12px;
       }
@@ -772,6 +846,7 @@
       <a href="#about">About</a>
       <a href="#origami">Origami</a>
       <a href="#quotes">Quotes</a>
+      <a href="#connections">Course Connections</a>
     </div>
   </nav>
 
@@ -919,6 +994,37 @@
           “The only journey is the one within.”
         </blockquote>
         <cite>Rainer Maria Rilke</cite>
+      </article>
+    </div>
+  </section>
+
+  <section id="connections" class="connections-section">
+    <div class="section-kicker">Exhibit III</div>
+    <h2>Course Connections</h2>
+    <p class="connections-lede">
+      Key texts and ideas that shaped my thinking this semester, and how they strengthened my understanding of identity, perspective, and analysis.
+    </p>
+    <div class="connections-grid">
+      <article class="connection-card">
+        <div class="connection-type">Favourite Text</div>
+        <h3><em>The Paper Menagerie</em></h3>
+        <p>
+          This story stood out to me because it captures the tension between cultural identity and the pressure to fit in. Jack's conflict with his heritage made me think more deeply about how identity can feel divided between family expectations and social acceptance.
+        </p>
+      </article>
+      <article class="connection-card">
+        <div class="connection-type">Literary Lens</div>
+        <h3>Postcolonial Lens</h3>
+        <p>
+          Using a postcolonial lens helped me analyze how assimilation can create emotional distance from one's roots. It pushed me to examine how power, language, and culture influence identity and belonging in both texts and real life.
+        </p>
+      </article>
+      <article class="connection-card">
+        <div class="connection-type">Challenging Text</div>
+        <h3><em>Frankenstein</em></h3>
+        <p>
+          I found this novel challenging because of its language and layered structure, but its focus on isolation made the analysis meaningful. Working through difficult passages improved my close-reading habits and strengthened my analytical writing.
+        </p>
       </article>
     </div>
   </section>
